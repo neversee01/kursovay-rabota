@@ -1,0 +1,32 @@
+﻿<Window x:Class="kursovay_rabota.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Snake Game" Height="600" Width="700">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Игровое поле -->
+        <Border Grid.Column="0" BorderBrush="Gray" BorderThickness="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Canvas Name="GameCanvas" Background="Black" Width="450" Height="450"/>
+        </Border>
+
+        <!-- Панель рекордов и управления -->
+        <StackPanel Grid.Column="1" Margin="10">
+            <TextBlock Text="Рекорды игр" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+            <ListBox Name="HighScoreList" Width="180" Height="200"/>
+
+            <!-- Поле для ввода имени -->
+            <TextBox Name="NameInput" Width="180" Height="25" Margin="0,10,0,0" Text="Введите своё имя"/>
+
+            <!-- Кнопки для управления списком рекордов и игрой -->
+            <Button Content="Лучшие результаты" Width="180" Height="30" Margin="0,10,0,0" Click="ShowHighScoresWindow"/>
+            <Button Content="Обнулить список" Width="180" Height="30" Margin="0,10,0,0" Click="ClearHighScores"/>
+            <Button Content="Старт" Width="180" Height="30" Margin="0,10,0,0" Click="StartGame"/>
+            <Button Content="Стоп" Width="180" Height="30" Margin="0,10,0,0" Click="StopGame"/>
+            <Button Content="Заново" Width="180" Height="30" Margin="0,10,0,0" Click="RestartGame"/>
+        </StackPanel>
+    </Grid>
+</Window>
